@@ -14,15 +14,15 @@ class _SliderIntroState extends State<SliderIntro> {
   List listintro = [
     {
       "text": "Welcome to M.A.R, Let's Scanning!",
-      "image": "images/onboarding0.png",
+      "image": "images/Png.png",
     },
     {
       "text": "Welcome to M.A.R, Let's Scanning!",
-      "image": "images/onboarding1.png",
+      "image": "images/Pngtr.png",
     },
     {
       "text": "Welcome to M.A.R, Let's Scanning!",
-      "image": "images/onboarding2.png",
+      "image": "images/Png.png",
     },
   ];
 
