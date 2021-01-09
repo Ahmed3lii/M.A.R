@@ -75,15 +75,22 @@ class _LogInState extends State<LogIn> {
     }
   }
 
-  signin() {
+  signin() async {
     var formdata = formstatesignin.currentState;
     if (formdata.validate()) {
-      print("valid");
+      formdata.save();
+      var data = {"email" : email.text, "password" : password.text};
+      var url = "http://10.0.2.2:8080/medical/login.php";
+      var response = await http.post(url, body: data);
+      var responcebody = jsonDecode(response.body);
+      if(responcebody['status'] == 'success'){
+        print(responcebody['UserName']);
+      }
     } else {
       print("not valid");
     }
   }
-
+  
   signup() {
     var formdata = formstatesignup.currentState;
     if (formdata.validate()) {
