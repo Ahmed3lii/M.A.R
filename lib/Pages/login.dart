@@ -1,7 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:email_validator/email_validator.dart';
-import 'dart:core';
+
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+
 
 class LogIn extends StatefulWidget {
   @override
@@ -90,7 +93,7 @@ class _LogInState extends State<LogIn> {
       print("not valid");
     }
   }
-  
+
   signup() {
     var formdata = formstatesignup.currentState;
     if (formdata.validate()) {
@@ -249,12 +252,12 @@ class _LogInState extends State<LogIn> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //Start TextField UserName
-                  Text("User Name",
+                  Text("Email",
                       style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.w700)),
                   SizedBox(height: 10),
                   buildTextFormFieldAll(
-                      "Enter UserName....", false, username, validusername),
+                      "Enter Email....", false, email, validemail),
                   //End TextField UserName
                   SizedBox(height: 10),
                   //************************************************************************************************ */
@@ -439,3 +442,4 @@ class _LogInState extends State<LogIn> {
     );
   }
 }
+
